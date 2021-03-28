@@ -1,0 +1,75 @@
+main#post {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+article {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1152px;
+
+  border: 1px solid black;
+}
+
+article aside {
+  _flex: 1;
+}
+
+article img {
+  height: max-content;
+}
+
+article section {
+  display: flex;
+  flex-direction: column;
+  _flex: 3;
+  min-width: 420px;
+  align-items: baseline;
+  text-align: left;
+}
+
+article img, article section {
+  padding: 16px;
+}
+
+article h2, article div {
+  max-width: 400px;
+}
+
+article h2 {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+article div {
+  display: flex;
+  flex-direction: column;
+}
+
+article div a {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+}
+
+article a div {
+  background: #6c757d;
+  background: #0d6efd;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  align-self: center;
+  margin-right: 8px;
+}
+
+article a svg {
+  width: 16px;
+  height: 16px;
+}

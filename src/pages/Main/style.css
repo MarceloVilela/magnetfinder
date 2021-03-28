@@ -1,0 +1,61 @@
+main, main a {
+  color: #ccc;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+input {
+  display: flex;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 4px;
+}
+
+input[type="text"] {
+  flex: 0.95;
+}
+
+input[type="submit"] {
+  background: #0d6efd;
+  border: 1px solid #0d6efd;
+  color: #fff;
+}
+
+input[type="submit"]:hover {
+  background: brightness(0.8);
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+thead, tbody {
+  text-align: left;
+}
+
+thead td {
+  cursor: pointer;
+}
+
+td {
+  padding: 8px;
+}
+
+td a {
+  align-items: center;
+}
+
+td a + a {
+  display: none;
+}
+
+td a svg {
+  margin-left: 8px;
+}
