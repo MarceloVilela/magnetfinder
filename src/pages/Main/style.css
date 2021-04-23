@@ -59,3 +59,52 @@ td a + a {
 td a svg {
   margin-left: 8px;
 }
+
+@media (max-width: 720px) {
+  -body {
+    border: 1px solid blue;
+  }
+
+  form#filter-results {
+    flex-wrap: wrap;
+  }
+
+  form#filter-results > * {
+    min-width: 100%;
+  }
+
+  form#filter-results input {
+    _border: 1px solid red;
+  }
+
+  form#filter-results p {
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  table {
+    border: none;
+  }
+
+  table tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  table td, table th {
+    min-width: 100%;
+    word-break: break-word;
+  }
+
+  table tbody tr + tr {
+    border-top: 1px solid #666;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table thead tr {
+    border-bottom: 1px solid #666;
+  }
+}

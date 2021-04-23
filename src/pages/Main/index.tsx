@@ -101,7 +101,7 @@ export default function Main() {
         <input type="submit" value="Buscar" />
       </form>
 
-      <form>
+      <form id="filter-results">
         <input
           type="text"
           value={filter}
@@ -138,10 +138,10 @@ export default function Main() {
                   <a href={`/post?url=${item.desc_link}`} target="_blank" rel="noopener noreferrer">{item.name} <FaLink /></a>
                 )}
               </td>
-              <td>{item.size}</td>
-              <td>{item.seeds}</td>
-              <td>{item.leech}</td>
-              <td>{item.engine_url}</td>
+              <td>{item.size || '---'}</td>
+              <td>{item.seeds || '---'}</td>
+              <td>{item.leech || '---'}</td>
+              <td>{item.engine_url || '---'}</td>
             </tr>
           ))}
         </tbody>
