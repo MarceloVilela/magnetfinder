@@ -1,5 +1,5 @@
 main, main a {
-  color: #ccc;
+  color: var(--gray-200);
 }
 
 form {
@@ -21,9 +21,9 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-  background: #0d6efd;
-  border: 1px solid #0d6efd;
-  color: #fff;
+  background: var(--app-500);
+  border: 1px solid var(--app-500);
+  color: var(--white);
 }
 
 input[type="submit"]:hover {
@@ -33,7 +33,7 @@ input[type="submit"]:hover {
 
 table {
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray-200);
 }
 
 thead, tbody {
@@ -89,6 +89,10 @@ td a svg {
   table tr {
     display: flex;
     flex-wrap: wrap;
+
+    background: #313235;
+    padding: 0 8px;
+    border-radius: 8px;
   }
 
   table td, table th {
@@ -97,7 +101,8 @@ td a svg {
   }
 
   table tbody tr + tr {
-    border-top: 1px solid #666;
+    /*border-top: 1px solid var(--gray-800);*/
+    margin-top: 16px;
   }
 
   table thead {
@@ -105,6 +110,6 @@ td a svg {
   }
 
   table thead tr {
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid var(--gray-800);
   }
 }

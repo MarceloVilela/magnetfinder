@@ -5,6 +5,21 @@
   box-sizing: border-box;
 }
 
+:root {
+  --white: #FFF;
+  --gray-50: #F7F8FA;
+  --gray-100: #E6E8EB;
+  --gray-200: #AFB2B1;
+  --gray-500: #808080;
+  --gray-800: #494D4B;
+  --green-500: #04D361;
+  /* https://www.color-hex.com/color/2cb19a */
+  --app-300: #2cb19a;
+  --app-400: #279f8a;
+  --app-500: #238d7b;
+  --app-800: #1e7b6b;
+}
+
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%;
@@ -68,7 +83,7 @@ main {
 .circle-button {
   width: 48px;
   height: 48px;
-  background: #0d6efd;
+  background: #2cb19a;
   border-radius: 50%;
   display: flex;
   justify-content: center;

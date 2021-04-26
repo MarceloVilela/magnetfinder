@@ -14,8 +14,10 @@ article {
 
   justify-content: space-around;
   max-width: 1152px;
+  background: #303030;
 
-  border: 1px solid black;
+  border: 1px solid #202020;
+  border-radius: 8px;
 }
 
 article aside {
@@ -62,8 +64,8 @@ article div a {
 }
 
 article a div {
-  background: #6c757d;
-  background: #0d6efd;
+  background: var(--gray-800);
+  background: var(--app-500);
   width: 32px;
   height: 32px;
   display: flex;
@@ -82,7 +84,7 @@ article a svg {
 @media (max-width: 720px) {
   #post h2, #post a {
     word-wrap: break-word;
-    _background-color: #ccc;
+    _background-color: var(--gray-200);
   }
 
   aside, article, article section {
@@ -92,15 +94,15 @@ article a svg {
   }
 
   aside {
-    _border: 1px solid #27242f;
+    _border: 1px solid var(--gray-800);
   }
 
   article {
-    _border: 1px solid #27242f;
+    _border: 1px solid var(--gray-800);
   }
 
   section {
-    _border: 1px solid #27242f;
+    _border: 1px solid var(--gray-800);
     overflow: hidden;
   }
 }
