@@ -1,44 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Magnet Finder
 
-## Available Scripts
+<div flex-direction="row">
+  <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=TypeScript&label=typescript&message=v3.7.2&color=success" />
+  <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=React&label=react&message=v16.13.1&color=success" />  
+</div>
 
-In the project directory, you can run:
+<div align="center">
+    <img alt="Preview 1" title="Preview 1" src=".github/Magnet-Finder-1.png" />
+    <br />
+    <img alt="Preview 2" title="Preview 2" src=".github/Magnet-Finder-2.png" />
+</div>
 
-### `yarn start`
+<br />
+<strong>Encontre magnet links sem precisar acessar sites manualmente, um por um.</strong>
+<br />
+<br />
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<strong>Usado como referência a busca do </strong><a href="https://github.com/qbittorrent/search-plugins/wiki/Unofficial-search-plugins#plugins-for-public-sites">QBittorrent</a>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Backend utilizado: <a href="https://github.com/MarceloVilela/scrapping">https://github.com/MarceloVilela/scrapping</a>
+## Demonstração
 
-### `yarn test`
+Caso deseje visualizar a aplicação antes de instalar, você pode acessar o <a href="https://magnetfinder.netlify.app/">link da aplicação</a> que está hospedada na Netlify.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Para executar locamente:
 
-### `yarn build`
+#### 1.Pré-requisitos
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### 2.Instalação
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para a instalação do projeto, primeiramente baixe o <a href="https://nodejs.org/en/">Node.js</a>.
 
-### `yarn eject`
+Após a instalação do Node, você deve clonar o repositório:
+```bash
+git clone https://github.com/MarceloVilela/magnetfinder.git
+```
+Após a clonagem, execute o comando abaixo dentro da pasta do projeto para baixar todas as dependências:
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### 3.Variáveis ambiente
+Crie um arquivo .env, 
+copie o conteúdo do arquivo .env.staging.example e cole dentro de .env,
+altere caso necessário.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 4.Inicializar
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Após clonar, execute o comando abaixo:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+npm run start
+```
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Abra [http://localhost:3000](http://localhost:3000) em seu navegador para utilizar a aplicação.
