@@ -44,6 +44,14 @@ export default function Main() {
 
   useEffect(() => {
     //setDocs(data as ResultData[]);
+    const wakeUp = () => {
+      try {
+        api.get('/tech-source/channels/br')
+      } catch (error) {
+        console.log('error on wake up');
+      }
+    };
+    wakeUp();
   }, [])
 
   const handleSubmit = useCallback((event: FormEvent) => {
