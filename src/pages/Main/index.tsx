@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useState, FormEvent, useCallback } from 'react'
-import { FaMagnet, FaLink } from 'react-icons/fa';
+import { FaMagnet, FaLink, FaHotjar } from 'react-icons/fa';
 
 import './style.css'
 import api from '../../services/api';
 //import data from '../../assets/results.json';
 import alias from '../../assets/egineAlias.json';
+import { Link } from 'react-router-dom';
 
 export interface ResultData {
   link: string;
@@ -44,14 +45,6 @@ export default function Main() {
 
   useEffect(() => {
     //setDocs(data as ResultData[]);
-    const wakeUp = () => {
-      try {
-        api.get('/tech-source/channels/br')
-      } catch (error) {
-        console.log('error on wake up');
-      }
-    };
-    wakeUp();
   }, [])
 
   const handleSubmit = useCallback((event: FormEvent) => {
@@ -60,10 +53,12 @@ export default function Main() {
     setEnginesPending(enginesAlias);
 
     enginesAlias.forEach(alias => {
-      const aliasEncoded = btoa(alias);
-      const searchQueryEncoded = btoa(search_query);
-      const requestConfig = { params: { url: aliasEncoded, search_query: searchQueryEncoded, encoded: 'true' } };
-      api.get('magnet-source/search', requestConfig)
+      const encoded = process.env.REACT_APP_ENCODED;
+      const aliasEncoded = encoded === 'true' ? btoa(alias) : alias;
+      const searchQueryEncoded = encoded === 'true' ? btoa(search_query) : search_query;
+      const requestConfig = { params: { url: aliasEncoded, search_query: searchQueryEncoded, encoded } };
+
+      api.get('/magnet-source/search', requestConfig)
         .then(({ data }) => {
           setResult(Object.assign(result, { [alias]: data }));
           setEnginesPending(enginesPending.filter(item => item !== alias));
@@ -155,6 +150,7 @@ export default function Main() {
         </tbody>
       </table>
 
+      <Link to="/trend" className="circle-button"><FaHotjar /></Link>
     </main>
   )
 }

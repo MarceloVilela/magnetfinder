@@ -5,6 +5,8 @@ import { useLocation } from 'react-router';
 import './style.css'
 import api from '../../services/api';
 import { toast } from 'react-toastify';
+import Loading from '../../components/Loading';
+import { Link } from 'react-router-dom';
 //import placeholder from '../../assets/detail.json';
 
 interface LinkData {
@@ -33,16 +35,16 @@ export default function Post() {
     const queryParams = new URLSearchParams(location.search);
     const url = queryParams.get('url');
 
-    const urlEncoded = btoa(String(url));
-    const requestConfig = { params: { url: urlEncoded, encoded: 'true' } };
+    const encoded = process.env.REACT_APP_ENCODED;
+    const urlEncoded = encoded === 'true' ? btoa(String(url)) : url;
+    const requestConfig = { params: { url: urlEncoded, encoded } };
 
     const requestDetail = async () => {
       try {
-        const { data } = await api.get('magnet-source/detail', requestConfig);
+        const { data } = await api.get('/magnet-source/detail', requestConfig);
         setDetail(data);
       } catch (error) {
-        const message = error?.response?.data?.message ? ` ${error.response.data.message}` : ''
-        toast.error(`Erro ao buscar dados da postagem: ${url}${message}`);
+        toast.error(`Erro ao buscar dados da postagem: ${url}`);
       } finally {
         setLoading(false);
       }
@@ -53,7 +55,7 @@ export default function Post() {
 
   return (
     <main id="post">
-      {(!loading && detail.links) && (
+      {(!loading && detail.links) ? (
         <article>
           <aside>
             <img src={detail.thumb} alt={'Thumb'} />
@@ -73,11 +75,11 @@ export default function Post() {
             </div>
           </section>
         </article>
-      )}
+      ) : <Loading />}
 
-      <a href="/" className="circle-button">
+      <Link to="/" className="circle-button">
         <FaArrowLeft />
-      </a>
+      </Link>
 
     </main>
   )

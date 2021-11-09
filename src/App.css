@@ -18,6 +18,10 @@
   --app-400: #279f8a;
   --app-500: #238d7b;
   --app-800: #1e7b6b;
+  --bg-300: #1f1c25;
+  --bg-400: #27242f;
+  --bg-500: #3c3943;
+  --bg-800: #524f58;
 }
 
 @media (max-width: 1080px) {
@@ -46,7 +50,7 @@ html, body, #root {
 }
 
 body {
-  background: #27242f;
+  background: var(--bg-400);
 }
 
 body, input, button {

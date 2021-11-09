@@ -26,6 +26,7 @@ article aside {
 
 article img {
   height: max-content;
+  max-width: 480px;
 }
 
 article section {
@@ -63,6 +64,12 @@ article div a {
   margin: 24px 0;
 }
 
+article a p {
+  display: flex;
+  flex: 1;
+  word-break: break-all;
+}
+
 article a div {
   background: var(--gray-800);
   background: var(--app-500);
@@ -79,11 +86,6 @@ article a div {
 article a svg {
   width: 16px;
   height: 16px;
-}
-
-article a p {
-  flex: 1;
-  width: calc(100% - 40px);
 }
 
 @media (max-width: 720px) {
